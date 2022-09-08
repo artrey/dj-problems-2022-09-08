@@ -1,0 +1,49 @@
+###
+
+POST http://localhost:8000/login/
+Content-Type: application/json
+
+{
+  "username": "admin2",
+  "password": "develop"
+}
+
+###
+
+GET http://localhost:8000/posts/?u_a=2022-09-08T17:07&u_b=2022-09-08T17:08
+Content-Type: application/json
+Authorization: Token 3b6efa94e90d0ddf603c0ae3a62417c5e49533a1
+
+###
+
+POST http://localhost:8000/posts/
+Content-Type: application/json
+#Authorization: Token ba5e72515c4e41457bf9206e5980c45d0a6dad3b
+Authorization: Token 3b6efa94e90d0ddf603c0ae3a62417c5e49533a1
+
+{
+  "text": "Private post",
+  "is_private": true
+}
+
+###
+
+GET http://localhost:8000/posts/2/
+Content-Type: application/json
+#Authorization: Token ba5e72515c4e41457bf9206e5980c45d0a6dad3b
+
+###
+
+PATCH http://localhost:8000/posts/2/
+Content-Type: application/json
+Authorization: Token ba5e72515c4e41457bf9206e5980c45d0a6dad3b
+
+{
+  "text": "Hello from admin1"
+}
+
+###
+
+DELETE http://localhost:8000/posts/1/
+Content-Type: application/json
+Authorization: Token ba5e72515c4e41457bf9206e5980c45d0a6dad3b
